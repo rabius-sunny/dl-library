@@ -10,7 +10,7 @@ import {
   Group
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAppContext } from 'utils/context'
 import { IconArrowLeft } from '@tabler/icons'
