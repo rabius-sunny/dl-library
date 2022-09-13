@@ -95,7 +95,10 @@ const useStyles = createStyles(theme => ({
     fontWeight: 500,
 
     '&:hover': {
-      backgroundColor: '#fff4e6'
+      backgroundColor: theme.fn.variant({
+        variant: 'light',
+        color: theme.primaryColor
+      }).background
     },
     [theme.fn.smallerThan('sm')]: {
       borderRadius: 0,
@@ -105,10 +108,8 @@ const useStyles = createStyles(theme => ({
 
   linkActive: {
     '&, &:hover': {
-      backgroundColor: theme.fn.variant({
-        variant: 'light',
-        color: theme.primaryColor
-      }).background,
+      backgroundColor: '#fff4e6',
+
       color: theme.colors.orange
     }
   }
@@ -203,7 +204,7 @@ const links = [
     label: 'Venues'
   },
   {
-    link: '/pricing',
-    label: 'Pricing'
+    link: '/admins',
+    label: 'Admins'
   }
 ]
