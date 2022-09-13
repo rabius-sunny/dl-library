@@ -6,6 +6,8 @@ import {
   Button,
   Text
 } from '@mantine/core'
+import { IconArrowNarrowRight } from '@tabler/icons'
+import { useNavigate } from 'react-router-dom'
 
 const useStyles = createStyles(theme => ({
   hero: {
@@ -69,6 +71,7 @@ const useStyles = createStyles(theme => ({
 
 export function Hero() {
   const { classes } = useStyles()
+  const navigate = useNavigate()
 
   return (
     <div className={classes.hero}>
@@ -79,12 +82,14 @@ export function Hero() {
       />
       <Container className={classes.container}>
         <Title className={classes.title}>
-          A fully featured React components library
+          একটি <Text color='yellow'>উপকারী জ্ঞান</Text> এ পরিপূর্ণ লাইব্রেরি
         </Title>
         <Text className={classes.description} size='xl' mt='xl'>
-          Build fully functional accessible web applications faster than ever –
-          Mantine includes more than 120 customizable components and hooks to
-          cover you in any situation
+          দারুল ইসলাম লাইব্রেরি একটি অত্যাধুনিক ও সফটওয়্যার নিয়ন্ত্রিত লাইব্রেরি
+          যার মূল উদ্দেশ্য 'ইলমে নাফে' তথা উপকারী জ্ঞানের প্রসার ঘটানো। আজই
+          একাউন্ট খুলুন আপনার স্থানীয় লাইব্রেরিতে, দারুল ইসলাম লাইব্রেরির সাথে
+          এবং পেয়ে যান আপনার আকাঙ্ক্ষিত বইসমূহ, সম্পূর্ণ বিনামূল্যে, নির্ধারিত
+          সময়ের জন্য।
         </Text>
 
         <Button
@@ -92,8 +97,10 @@ export function Hero() {
           size='xl'
           radius='xl'
           className={classes.control}
+          onClick={() => navigate('/sign-in')}
         >
-          Get started
+          শুরু করুন
+          <IconArrowNarrowRight style={{ marginLeft: 10 }} size={25} />
         </Button>
       </Container>
     </div>

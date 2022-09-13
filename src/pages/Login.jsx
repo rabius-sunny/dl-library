@@ -40,7 +40,7 @@ export default function Login() {
   })
 
   return (
-    <div className='container'>
+    <div className='container loginContainer'>
       <div style={{ width: '150px' }}>
         <Link to='/'>
           <Group align='center' mt={20}>

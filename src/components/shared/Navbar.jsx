@@ -14,7 +14,8 @@ import { useDisclosure } from '@mantine/hooks'
 import {
   IconBrandTwitter,
   IconBrandYoutube,
-  IconBrandFacebook
+  IconBrandFacebook,
+  IconNotebook
 } from '@tabler/icons'
 import { useNavigate } from 'react-router-dom'
 
@@ -129,6 +130,7 @@ export default function Navbar() {
       onClick={event => {
         event.preventDefault()
         setActive(link.link)
+        navigate(link.link)
         close()
       }}
     >
@@ -156,8 +158,16 @@ export default function Navbar() {
           )}
         </Transition>
 
-        <Text component='h2' size={25} color='orange'>
-          DL Library
+        <Text
+          component='h2'
+          style={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
+          size={25}
+          color='orange'
+        >
+          <IconNotebook size={25} /> DL Library
         </Text>
 
         <Group spacing={0} className={classes.social} position='right' noWrap>
@@ -185,12 +195,12 @@ export default function Navbar() {
 
 const links = [
   {
-    link: '/about',
+    link: '/',
     label: 'Home'
   },
   {
-    link: '/learn',
-    label: 'Features'
+    link: '/venues',
+    label: 'Venues'
   },
   {
     link: '/pricing',
